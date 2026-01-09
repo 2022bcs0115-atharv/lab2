@@ -5,9 +5,8 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import Lasso
 
 
 
@@ -50,7 +49,7 @@ X_test = scaler.transform(X_test)
 # -----------------------------
 # Model Training
 # -----------------------------
-model = Ridge(alpha=1.0)
+model = Lasso(alpha=0.1, max_iter=10000)
 model.fit(X_train, y_train)
 
 
